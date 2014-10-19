@@ -1,3 +1,4 @@
+set encoding=utf-8
 set nocompatible
 
 " 画面表示の設定
@@ -75,7 +76,11 @@ set history=10000
 " Start Neobundle Settings.
 "---------------------------
 " bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+if has('win32')
+    set runtimepath+=$HOME\.vim\bundle\neobundle.vim\
+else
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))

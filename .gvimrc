@@ -21,6 +21,12 @@ if filereadable(g:save_window_file)
   execute 'source' g:save_window_file
 endif
 
-autocmd GUIEnter * set transparency=10
-autocmd FocusGained * set transparency=10
-autocmd FocusLost * set transparency=50
+if has('win32')
+    autocmd GUIEnter * set transparency=200
+    autocmd FocusGained * set transparency=200
+    autocmd FocusLost * set transparency=127
+else    
+    autocmd GUIEnter * set transparency=10
+    autocmd FocusGained * set transparency=10
+    autocmd FocusLost * set transparency=50
+endif
