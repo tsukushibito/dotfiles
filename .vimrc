@@ -12,7 +12,7 @@ set showmatch      " 対応する括弧を強調表示
 set helpheight=999 " ヘルプを画面いっぱいに開く
 set list           " 不可視文字を表示
 " 不可視文字の表示記号指定
-set listchars=eol:↲,extends:❯,precedes:❮
+set listchars=tab:>-,eol:↲,extends:❯,precedes:❮
 
 " カーソル移動関連の設定
 
@@ -41,7 +41,7 @@ set gdefault   " 置換の時 g オプションをデフォルトで有効にす
 
 " タブ/インデントの設定
 
-"set expandtab     " タブ入力を複数の空白入力に置き換える
+set expandtab     " タブ入力を複数の空白入力に置き換える
 set tabstop=4     " 画面上でタブ文字が占める幅
 set shiftwidth=4  " 自動インデントでずれる幅
 set softtabstop=4 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
@@ -71,6 +71,11 @@ set history=10000
 "ビープ音すべてを無効にする
 "set visualbell t_vb=
 "set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
+
+" Vim起動時に前回のセッションを復元する
+source  
+" Vim終了時に現在のセッションを保存する
+au VimLeave * mks!  < file>
 
 "---------------------------
 " Start Neobundle Settings.
@@ -104,6 +109,10 @@ endif
 
 call neobundle#end()
 
+NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'Shougo/vimproc'
+NeoBundle 'vim-scripts/DoxygenToolkit.vim'
+
 " Required:
 filetype plugin indent on
 
@@ -117,3 +126,9 @@ NeoBundleCheck
 
 " 編集中のバッファのファイルのディレクトリに移動
 :cd %:h
+
+" 自作プラグインディレクトリ追加
+set runtimepath+=~/.vim/plugin/
+
+" doxygen-supportディレクトリ追加
+set runtimepath+=~/.vim/doxygen-support/

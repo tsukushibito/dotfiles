@@ -1,0 +1,8 @@
+
+*.un~
+
+.vim/bundle/
+
+.vimrc~
+
+*.sh~
