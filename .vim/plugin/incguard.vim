@@ -19,7 +19,7 @@ uuidString = uuid.uuid4().hex
 currentBuffer = vim.current.buffer
 currentBuffer.append("#pragma once", 0)
 currentBuffer.append("#ifndef GUARD_" + uuidString, 1)
-currentBuffer.append("#define GUARD_" + uuidString, 1)
+currentBuffer.append("#define GUARD_" + uuidString, 2)
 currentBuffer.append("#endif // GUARD_" + uuidString)
 EOF
 endfunction

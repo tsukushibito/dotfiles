@@ -2,7 +2,11 @@ syntax enable
 set background=dark
 colorscheme solarized
 set showtabline=2
-set guifont=Ricty:h16
+if has('win32')
+    set guifont=MS_ゴシック:h14
+else
+    set guifont=Ricty:h16
+endif
 let g:save_window_file = expand('~/.vimwinpos')
 augroup SaveWindow
   autocmd!

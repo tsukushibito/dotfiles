@@ -12,7 +12,7 @@ set showmatch      " 対応する括弧を強調表示
 set helpheight=999 " ヘルプを画面いっぱいに開く
 set list           " 不可視文字を表示
 " 不可視文字の表示記号指定
-set listchars=tab:>-,eol:↲,extends:❯,precedes:❮
+set listchars=tab:>\ ,extends:❯,precedes:❮
 
 " カーソル移動関連の設定
 
@@ -72,10 +72,18 @@ set history=10000
 "set visualbell t_vb=
 "set noerrorbells "エラーメッセージの表示時にビープを鳴らさない
 
-" Vim起動時に前回のセッションを復元する
-source  
-" Vim終了時に現在のセッションを保存する
-au VimLeave * mks!  < file>
+
+" 括弧、クォートの補完
+"inoremap { {}<LEFT>
+"inoremap [ []<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+"vnoremap { "zdi{<C-R>z}<ESC>
+"vnoremap [ "zdi[<C-R>z]<ESC>
+"vnoremap ( "zdi(<C-R>z)<ESC>
+"vnoremap " "zdi"<C-R>z"<ESC>
+"vnoremap ' "zdi'<C-R>z'<ESC>
 
 "---------------------------
 " Start Neobundle Settings.
@@ -109,9 +117,21 @@ endif
 
 call neobundle#end()
 
+NeoCompleteEnable
+let g:neocomplete#enable_at_startup = 1
+
 NeoBundle 'Shougo/unite.vim'
 "NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-scripts/DoxygenToolkit.vim'
+NeoBundle 'vim-scripts/TagHighlight'
+NeoBundle 'rhysd/vim-clang-format'
+NeoBundle 'msanders/cocoa.vim'
+NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'soramugi/auto-ctags.vim'
+NeoBundle 'scrooloose/nerdtree'
 
 " Required:
 filetype plugin indent on
@@ -132,3 +152,68 @@ set runtimepath+=~/.vim/plugin/
 
 " doxygen-supportディレクトリ追加
 set runtimepath+=~/.vim/doxygen-support/
+
+" ファイルタイプ設定
+au BufRead,BufNewFile *.gyp set filetype=python
+au BufRead,BufNewFile *.gypi set filetype=pytyon
+au BufRead,BufNewFile *.mm set filetype=cpp
+
+" grepの結果をQuickfixにフック
+autocmd QuickFixCmdPost *grep* cwindow
+
+" 挿入モード終了時にSyntasticCheck実行
+augroup AutoClangFormatAndSyntasticCheck
+    autocmd!
+    autocmd InsertLeave * call s:syntastic() 
+augroup END
+function! s:syntastic()
+"    ClangFormat
+    SyntasticCheck
+endfunction
+
+" Gtagsの自動更新を有効化
+let Gtags_Auto_Update = 1
+
+" auto-ctagsの自動更新を有効化
+let g:auto_ctags = 1
+
+" 起動時にUpdateTypesFileを実行
+augroup UpdateTagHighlightTypeFile
+    autocmd!
+    autocmd VimEnter * call s:updateFileType()
+augroup END
+function! s:updateFileType()
+    "UpdateTypesFile
+endfunction
+
+" Quickfixのキーマッピング
+map <C-N> :cn<CR>
+map <C-P> :cp<CR>
+
+" Uniteのキーマッピング
+noremap <silent> ,ub :<C-U>Unite buffer<CR>
+noremap <silent> ,uf :<C-U>Unite file<CR>
+
+" ClangFormatのキーマッピング
+noremap <C-@> :ClangFormat<CR>
+
+" Gtagsのキーマッピング
+noremap <C-J> :GtagsCursor<CR>
+noremap <C-K> :Gtags -r<CR><CR>
+
+" その他のキーマッピング
+noremap <F2> :e ~/.vimrc<CR>
+noremap <F5> :QuickRun<CR>
+
+" Doxygenの行末用コメント挿入コマンド
+function! s:doxMember()
+    :let comment = " /**< */"
+    :execute ":normal A".comment
+    :normal F*
+    :normal i 
+    :startinsert
+endfunction
+command! -nargs=0 DoxMember call s:doxMember()
+
+noremap ,dd :Dox<CR>
+noremap ,dm :DoxMember<CR>
