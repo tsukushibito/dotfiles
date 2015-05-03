@@ -99,7 +99,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
+" NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'Shougo/neocomplete.vim'
@@ -117,7 +117,7 @@ endif
 
 call neobundle#end()
 
-NeoCompleteEnable
+"NeoCompleteEnable
 let g:neocomplete#enable_at_startup = 1
 
 NeoBundle 'Shougo/unite.vim'
@@ -140,7 +140,7 @@ filetype plugin indent on
 
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
-NeoBundleCheck
+"NeoBundleCheck
 
 "-------------------------
 " End Neobundle Settings.
@@ -153,7 +153,7 @@ NeoBundleCheck
 set runtimepath+=~/.vim/plugin/
 
 " doxygen-supportディレクトリ追加
-set runtimepath+=~/.vim/doxygen-support/
+set runtimepath+=~/.vim/doxygen-support/doxygen-support/
 
 " ファイルタイプ設定
 au BufRead,BufNewFile *.gyp set filetype=python
