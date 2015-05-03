@@ -121,9 +121,11 @@ NeoCompleteEnable
 let g:neocomplete#enable_at_startup = 1
 
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler'
 "NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-scripts/DoxygenToolkit.vim'
 NeoBundle 'vim-scripts/TagHighlight'
+NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'rhysd/vim-clang-format'
 NeoBundle 'msanders/cocoa.vim'
 NeoBundle 'vim-scripts/a.vim'
@@ -145,7 +147,7 @@ NeoBundleCheck
 "-------------------------
 
 " 編集中のバッファのファイルのディレクトリに移動
-:cd %:h
+":cd %:h
 
 " 自作プラグインディレクトリ追加
 set runtimepath+=~/.vim/plugin/
@@ -157,6 +159,27 @@ set runtimepath+=~/.vim/doxygen-support/
 au BufRead,BufNewFile *.gyp set filetype=python
 au BufRead,BufNewFile *.gypi set filetype=pytyon
 au BufRead,BufNewFile *.mm set filetype=cpp
+
+" filetype=cpp が設定された時に呼ばれる関数
+"Vim で C++ の設定を行う場合はこの関数内で記述する
+" ここで設定する項目は各自好きに行って下さい
+function! s:cpp()
+    " インクルードパスを設定する
+    " gf などでヘッダーファイルを開きたい場合に影響する
+if has('mac')
+    setlocal path+=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+endif
+    " 括弧を構成する設定に <> を追加する
+    " template<> を多用するのであれば
+    setlocal matchpairs+=<:>
+endfunction
+
+
+augroup vimrc-cpp
+    autocmd!
+    " filetype=cpp が設定された場合に関数を呼ぶ
+    autocmd FileType cpp call s:cpp()
+augroup END
 
 " grepの結果をQuickfixにフック
 autocmd QuickFixCmdPost *grep* cwindow
@@ -170,6 +193,9 @@ function! s:syntastic()
 "    ClangFormat
     SyntasticCheck
 endfunction
+
+" VimFilerのEdit動作のカスタマイズ
+let g:vimfiler_edit_action = 'tabopen'
 
 " Gtagsの自動更新を有効化
 let Gtags_Auto_Update = 1
@@ -195,7 +221,7 @@ noremap <silent> ,ub :<C-U>Unite buffer<CR>
 noremap <silent> ,uf :<C-U>Unite file<CR>
 
 " ClangFormatのキーマッピング
-noremap <C-@> :ClangFormat<CR>
+noremap <C-_> :ClangFormat<CR>
 
 " Gtagsのキーマッピング
 noremap <C-J> :GtagsCursor<CR>
