@@ -5,7 +5,7 @@ set showtabline=2
 if has('win32')
     set guifont=MS_ゴシック:h14
 else
-    set guifont=Ricty:h16
+    set guifont=Ricty:h14
 endif
 let g:save_window_file = expand('~/.vimwinpos')
 augroup SaveWindow

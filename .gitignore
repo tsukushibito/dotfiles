@@ -6,3 +6,5 @@
 .vimrc~
 
 *.sh~
+
+.vim/tmp/
