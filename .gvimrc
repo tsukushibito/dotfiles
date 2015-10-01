@@ -1,5 +1,6 @@
 syntax enable
 set background=dark
+let g:solarized_italic=0
 colorscheme solarized
 set showtabline=2
 if has('win32')
