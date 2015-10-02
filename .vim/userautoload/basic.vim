@@ -1,3 +1,4 @@
+scriptencoding utf-8
 " 画面表示の設定
 
 set number         " 行番号を表示する
@@ -9,7 +10,7 @@ set showmatch      " 対応する括弧を強調表示
 "set helpheight=999 " ヘルプを画面いっぱいに開く
 set list           " 不可視文字を表示
 " 不可視文字の表示記号指定
-set listchars=tab:>\ ,extends:❯,precedes:❮
+set listchars=tab:>\ ,extends:❯,precedes:❮",eol:$
 
 
 " カーソル移動関連の設定

@@ -21,6 +21,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
@@ -31,12 +32,15 @@ NeoBundle 'vim-scripts/DoxygenToolkit.vim'
 " NeoBundle 'vim-scripts/TagHighlight'
 " NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'rhysd/vim-clang-format'
-NeoBundle 'vim-scripts/a.vim'
+"NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'thinca/vim-quickrun'
 " NeoBundle 'xolox/vim-misc'
 " NeoBundle 'xolox/vim-lua-inspect'
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'osyo-manga/vim-marching.git'
+NeoBundle 'kana/vim-altr'
+NeoBundle 'bbchung/clighter'
 
 call neobundle#end()
 

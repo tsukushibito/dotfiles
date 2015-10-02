@@ -1,7 +1,14 @@
 syntax enable
 set background=dark
 let g:solarized_italic=0
-colorscheme solarized
+
+ if neobundle#is_installed('vim-colors-solarized')
+     colorscheme solarized
+" if neobundle#is_installed('vim-hybrid')
+"    colorscheme hybrid
+else
+endif
+
 set showtabline=2
 if has('win32')
     set guifont=Consolas:h11
@@ -34,5 +41,5 @@ if has('win32')
 else    
     autocmd GUIEnter * set transparency=10
     autocmd FocusGained * set transparency=10
-    autocmd FocusLost * set transparency=50
+    autocmd FocusLost * set transparency=20
 endif
