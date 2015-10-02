@@ -1,5 +1,5 @@
 ﻿scriptencoding utf-8
-" 基本機能に対するマッピング
+" 基本機能に対するマッピング {{{1
 " .vimrcの編集
 noremap <F2> :<C-u>tabedit ~/.vimrc<CR> 
 " .vim/userautoloadをVimFilerで開く
@@ -11,12 +11,12 @@ end
 " 現在のバッファを再読み込み
 noremap <F4> :<C-u>source %<CR>
 
-" Unite
+" Unite {{{1
 nnoremap [Unite] <Nop>
 nmap <Space>u [Unite]
 nnoremap [Unite]b :<C-u>Unite -auto-resize -direction=dynamicbottom buffer<CR>
 
-" VimFiler
+" VimFiler {{{1
 nnoremap [VimFiler] <Nop>
 nmap <Space>f [VimFiler]
 if has('win32')
@@ -26,23 +26,28 @@ else
 endif
 nnoremap [VimFiler]d :<C-u>VimFilerDouble -toggle<CR>
 
-" Neosnippet
+" Neosnippet {{{1
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
-" ClangFormat
+" ClangFormat {{{1
 nnoremap [ClangFormat] <Nop>
 nmap <Space>c [ClangFormat]
 nnoremap [ClangFormat]f :<C-u>ClangFormat<CR>
 
-" vim-easy-align
+" vim-easy-align {{{1
 noremap [EasyAlign] <Nop>
 map <Space>a [EasyAlign]
 vmap [EasyAlign] <Plug>(EasyAlign)
 
-" vim-altr
+" vim-altr {{{1
 nnoremap [altr] <Nop>
 nmap <Space><Space> [altr]
 nmap [altr]f <Plug>(altr-forward)
 nmap [altr]b <Plug>(altr-back)
+" }}}
+
+" vim: foldmethod=marker
+" vim: foldcolumn=3
+" vim: foldlevel=0

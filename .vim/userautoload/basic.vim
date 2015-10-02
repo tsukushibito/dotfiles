@@ -81,3 +81,7 @@ set history=10000
 set directory=~/.vim/tmp
 set backupdir=~/.vim/tmp
 set undodir=~/.vim/tmp
+
+" モードラインを有効にする
+set modeline
+set modelines-3
