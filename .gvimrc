@@ -4,7 +4,8 @@ let g:solarized_italic=0
 colorscheme solarized
 set showtabline=2
 if has('win32')
-    set guifont=MS_ゴシック:h14
+    set guifont=Consolas:h11
+    set guifontwide=MS_Gothic:h11
 else
     set guifont=Ricty:h14
 endif

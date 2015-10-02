@@ -7,4 +7,8 @@ set runtimepath+=~/.vim/
 runtime! userautoload/*.vim
 
 " doxygen-supportディレクトリ追加
-set runtimepath+=~/.vim/doxygen-support/
+if has('win32')
+    set runtimepath+=$HOME.vim\doxygen-support\
+else
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif

@@ -7,11 +7,7 @@ if has('vim_starting')
     endif
 
     " Required:
-    if has('win32')
-        set runtimepath+=$HOME\.vim\bundle\neobundle.vim\
-    else
-        set runtimepath+=~/.vim/bundle/neobundle.vim/
-    endif
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
  endif
 
 " Required:
@@ -32,12 +28,14 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-scripts/DoxygenToolkit.vim'
-NeoBundle 'vim-scripts/TagHighlight'
-NeoBundle 'vim-scripts/taglist.vim'
+" NeoBundle 'vim-scripts/TagHighlight'
+" NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'rhysd/vim-clang-format'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'thinca/vim-quickrun'
+" NeoBundle 'xolox/vim-misc'
+" NeoBundle 'xolox/vim-lua-inspect'
 
 call neobundle#end()
 

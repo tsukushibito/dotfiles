@@ -14,4 +14,8 @@ nnoremap <silent> [Unite]b :<C-u>Unite buffer<CR>
 " VimFiler
 nnoremap [VimFiler] <Nop>
 nmap <Space>f [VimFiler]
-nnoremap <silent> [VimFiler]s :<C-u>VimFiler -split -simple -winwidth=45 -no-quit<CR>
+if has('win32')
+    nnoremap <silent> [VimFiler]s :<C-u>VimFiler -split -simple -winwidth=40 -no-quit<CR>
+else
+    nnoremap <silent> [VimFiler]s :<C-u>VimFiler -split -simple -winwidth=45 -no-quit<CR>
+endif
