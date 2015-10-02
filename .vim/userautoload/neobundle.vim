@@ -36,6 +36,7 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'thinca/vim-quickrun'
 " NeoBundle 'xolox/vim-misc'
 " NeoBundle 'xolox/vim-lua-inspect'
+NeoBundle 'junegunn/vim-easy-align'
 
 call neobundle#end()
 

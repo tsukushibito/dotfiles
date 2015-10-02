@@ -34,3 +34,8 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 nnoremap [ClangFormat] <Nop>
 nmap <Space>c [ClangFormat]
 nnoremap <silent> [ClangFormat]f :<C-u>ClangFormat<CR>
+
+" vim-easy-align
+nnoremap [EasyAlign] <Nop>
+nmap <Space>a [EasyAlign]
+vnoremap <silent> [EasyAlign] <Plug>(EasyAlign)
