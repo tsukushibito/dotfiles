@@ -1,12 +1,13 @@
 ﻿scriptencoding utf-8
+echom '[mapping.vim]'
 " 基本機能に対するマッピング {{{1
 " .vimrcの編集
 noremap <F2> :<C-u>tabedit ~/.vimrc<CR> 
 " .vim/userautoloadをVimFilerで開く
 if has('win32')
-    noremap <F3> :<C-u>cd $HOME<CR>:<C-u>VimFiler -split -simple -winwidth=45 -no-quit -toggle .vim/userautoload<CR>
+    noremap <F3> :<C-u>cd $HOME<CR>:<C-u>VimFiler -split -simple -winwidth=45 -no-quit -toggle $HOME/.vim/userautoload<CR>
 else
-    noremap <F3> :<C-u>cd ~<CR>:<C-u>VimFiler -split -simple -winwidth=45 -no-quit -toggle .vim/userautoload<CR>
+    noremap <F3> :<C-u>cd ~<CR>:<C-u>VimFiler -split -simple -winwidth=45 -no-quit -toggle ~/.vim/userautoload<CR>
 end
 " 現在のバッファを再読み込み
 noremap <F4> :<C-u>source %<CR>

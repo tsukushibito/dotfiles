@@ -8,3 +8,4 @@
 *.sh~
 
 .vim/tmp/
+.vim/.netrwhist

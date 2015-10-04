@@ -1,4 +1,5 @@
 scriptencoding utf-8
+echom '[basic.vim]'
 " 画面表示の設定
 
 set number         " 行番号を表示する
@@ -84,4 +85,4 @@ set undodir=~/.vim/tmp
 
 " モードラインを有効にする
 set modeline
-set modelines-3
+set modelines=3

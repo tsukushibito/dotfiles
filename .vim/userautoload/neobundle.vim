@@ -1,4 +1,5 @@
-﻿" Note: Skip initialization for vim-tiny or vim-small.
+﻿echom '[neobundle.vim]'
+" Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
 
 if has('vim_starting')
@@ -32,15 +33,15 @@ NeoBundle 'vim-scripts/DoxygenToolkit.vim'
 " NeoBundle 'vim-scripts/TagHighlight'
 " NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'rhysd/vim-clang-format'
-"NeoBundle 'vim-scripts/a.vim'
-NeoBundle 'davidhalter/jedi-vim'
+" NeoBundle 'vim-scripts/a.vim'
+" NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'thinca/vim-quickrun'
 " NeoBundle 'xolox/vim-misc'
 " NeoBundle 'xolox/vim-lua-inspect'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'osyo-manga/vim-marching.git'
 NeoBundle 'kana/vim-altr'
-NeoBundle 'bbchung/clighter'
+" NeoBundle 'bbchung/clighter'
 
 call neobundle#end()
 
@@ -52,4 +53,5 @@ filetype plugin indent on
 NeoBundleCheck
 
 " Read setting files of each plugins
-runtime! userautoload/plugins/*.vim
+echom 'Reading setting files of each plubins.'
+" runtime! userautoload/plugin/*.vim

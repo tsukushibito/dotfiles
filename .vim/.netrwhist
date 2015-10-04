@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/yusuke/Documents/GitHub/TempuraEngine'
-let g:netrw_dirhist_2='/Users/yusuke/Documents/GitHub/TempuraEngine/source'
-let g:netrw_dirhist_3='/Users/yusuke/Documents/GitHub/TempuraEngine/source/Allocator'
-let g:netrw_dirhist_4='/Users/yusuke/Documents/GitHub/TempuraEngine'
-let g:netrw_dirhist_5='/Users/yusuke/Documents/GitHub/TempuraEngine/source'
-let g:netrw_dirhist_6='/Users/yusuke/Documents/GitHub/TempuraEngine/source/System'

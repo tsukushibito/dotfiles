@@ -1,3 +1,5 @@
+scriptencoding utf-8
+echom '[vim-clang-format]'
 if neobundle#is_installed('vim-clang-format')
     let g:clang_format#style_options = {
         \ "BasedOnStyle" : "LLVM",

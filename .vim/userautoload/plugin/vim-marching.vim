@@ -1,4 +1,5 @@
 scriptencoding utf-8
+echom '[vim-marching.vim]'
 if neobundle#is_installed('vim-marching')
     " clang コマンドの設定
     if has('win32')
@@ -17,8 +18,8 @@ if neobundle#is_installed('vim-marching')
     " インクルードディレクトリのパスを設定
     let g:marching_include_paths = [
     \   "C:/MinGW/lib/gcc/mingw32/4.6.2/include/c++",
-    \   "C:/cpp/boost"
-    \   "Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"
+    \   "C:/cpp/boost",
+    \   "Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1",
     \]
 
     " neocomplete.vim と併用して使用する場合
