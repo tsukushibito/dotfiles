@@ -37,6 +37,8 @@ NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'osyo-manga/vim-marching.git'
 NeoBundle 'kana/vim-altr'
 NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'easymotion/vim-easymotion'
 
 call neobundle#end()
 

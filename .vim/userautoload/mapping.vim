@@ -48,6 +48,11 @@ nmap <Space><Space> [altr]
 nmap [altr]f <Plug>(altr-forward)
 nmap [altr]b <Plug>(altr-back)
 " }}}
+" vim-easymotion {{{1
+nnoremap [EasyMotion] <Nop>
+nmap <Space>e [EasyMotion]
+nmap [EasyMotion] <Plug>(easymotion-s2)
+" }}}
 
 " vim: foldmethod=marker
 " vim: foldcolumn=3
