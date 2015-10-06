@@ -12,6 +12,27 @@ end
 " 現在のバッファを再読み込み
 noremap <F4> :<C-u>source %<CR>
 
+" QuickFix用
+nnoremap Q q
+nnoremap qj  :cnext<Return>
+nnoremap qk  :cprevious<Return>
+nnoremap qr  :crewind<Return>
+nnoremap qK  :cfirst<Return>
+nnoremap qJ  :clast<Return>
+nnoremap qf  :cnfile<Return>
+nnoremap qF  :cpfile<Return>
+nnoremap ql  :clist<Return>
+nnoremap qq  :cc<Return>
+nnoremap qo  :copen<Return>
+nnoremap qc  :cclose<Return>
+nnoremap qw  :cwindow<Return>
+nnoremap qp  :colder<Return>
+nnoremap qn  :cnewer<Return>
+nnoremap qm  :make<Return>
+nnoremap qM  :make<Space>
+nnoremap qg  :grep<Space>
+nnoremap q   <Nop>
+
 " Unite {{{1
 nnoremap [Unite] <Nop>
 nmap <Space>u [Unite]

@@ -86,3 +86,6 @@ set undodir=~/.vim/tmp
 " モードラインを有効にする
 set modeline
 set modelines=3
+
+" vimgreq で自動でQuickFixを開くようにする
+autocmd QuickFixCmdPost *grep cwindow
