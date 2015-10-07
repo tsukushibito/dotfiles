@@ -1,12 +1,12 @@
 ﻿set encoding=utf-8
 scriptencoding utf-8
-echom '[.vimrc]'
+" echom '[.vimrc]'
 
 set fileencoding=utf-8 bomb            " BOM付きにする
 
 " 分割した設定ファイルの読み込み
 set runtimepath+=$HOME/.vim/
-echom 'Read userautoload files.'
+" echom 'Read userautoload files.'
 runtime! userautoload/*.vim
 
 function! s:initialDisplay()

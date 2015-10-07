@@ -1,4 +1,4 @@
-﻿echom '[neobundle.vim]'
+﻿" echom '[neobundle.vim]'
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
 
@@ -50,5 +50,5 @@ filetype plugin indent on
 NeoBundleCheck
 
 " Read setting files of each plugins
-echom 'Reading setting files of each plubins.'
+" echom 'Reading setting files of each plubins.'
 " runtime! userautoload/plugin/*.vim

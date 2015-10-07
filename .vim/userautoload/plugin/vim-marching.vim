@@ -1,5 +1,5 @@
 scriptencoding utf-8
-echom '[vim-marching.vim]'
+" echom '[vim-marching.vim]'
 if neobundle#is_installed('vim-marching')
     " clang コマンドの設定
     if has('win32')

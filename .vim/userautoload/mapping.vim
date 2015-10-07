@@ -1,5 +1,5 @@
 ﻿scriptencoding utf-8
-echom '[mapping.vim]'
+" echom '[mapping.vim]'
 " 基本機能に対するマッピング {{{1
 " .vimrcの編集
 noremap <F2> :<C-u>tabedit ~/.vimrc<CR> 
@@ -13,25 +13,30 @@ end
 noremap <F4> :<C-u>source %<CR>
 
 " QuickFix用
-nnoremap Q q
-nnoremap qj  :cnext<Return>
-nnoremap qk  :cprevious<Return>
-nnoremap qr  :crewind<Return>
-nnoremap qK  :cfirst<Return>
-nnoremap qJ  :clast<Return>
-nnoremap qf  :cnfile<Return>
-nnoremap qF  :cpfile<Return>
-nnoremap ql  :clist<Return>
-nnoremap qq  :cc<Return>
-nnoremap qo  :copen<Return>
-nnoremap qc  :cclose<Return>
-nnoremap qw  :cwindow<Return>
-nnoremap qp  :colder<Return>
-nnoremap qn  :cnewer<Return>
-nnoremap qm  :make<Return>
-nnoremap qM  :make<Space>
-nnoremap qg  :grep<Space>
-nnoremap q   <Nop>
+nnoremap [QuickFix] <Nop>
+nmap <Space>q [QuickFix]
+nnoremap [QuickFix]j  :cnext<Return>
+nnoremap [QuickFix]k  :cprevious<Return>
+nnoremap [QuickFix]r  :crewind<Return>
+nnoremap [QuickFix]K  :cfirst<Return>
+nnoremap [QuickFix]J  :clast<Return>
+nnoremap [QuickFix]f  :cnfile<Return>
+nnoremap [QuickFix]F  :cpfile<Return>
+nnoremap [QuickFix]l  :clist<Return>
+nnoremap [QuickFix]q  :cc<Return>
+nnoremap [QuickFix]o  :copen<Return>
+nnoremap [QuickFix]c  :cclose<Return>
+nnoremap [QuickFix]w  :cwindow<Return>
+nnoremap [QuickFix]p  :colder<Return>
+nnoremap [QuickFix]n  :cnewer<Return>
+nnoremap [QuickFix]m  :make<Return>
+nnoremap [QuickFix]M  :make<Space>
+nnoremap [QuickFix]g  :grep<Space>
+
+" vimgrep用
+nnoremap [VimGrep] <Nop>
+nmap <Space>g [VimGrep]
+noremap <expr> [VimGrep] ':vimgrep /' . expand('<cword>') . '/ ' 
 
 " Unite {{{1
 nnoremap [Unite] <Nop>

@@ -1,5 +1,5 @@
 scriptencoding utf-8
-echom '[basic.vim]'
+" echom '[basic.vim]'
 " 画面表示の設定
 
 set number         " 行番号を表示する
