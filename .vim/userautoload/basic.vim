@@ -12,6 +12,23 @@ set showmatch      " 対応する括弧を強調表示
 set list           " 不可視文字を表示
 " 不可視文字の表示記号指定
 set listchars=tab:>\ ,extends:❯,precedes:❮",eol:$
+" 全角スペースのハイライト
+"デフォルトのZenkakuSpaceを定義
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=darkgrey
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+    autocmd!
+    " ZenkakuSpaceをカラーファイルで設定するなら次の行は削除
+    autocmd ColorScheme       * call ZenkakuSpace()
+    " 全角スペースのハイライト指定
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+    autocmd VimEnter,WinEnter * match ZenkakuSpace '\%u3000'
+    augroup END
+    call ZenkakuSpace()
+endif
 
 
 " カーソル移動関連の設定
