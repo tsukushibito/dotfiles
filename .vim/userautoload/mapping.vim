@@ -12,6 +12,9 @@ end
 " 現在のバッファを再読み込み
 noremap <F4> :<C-u>source %<CR>
 
+" 現在のバッファのファイル場所をカレントディレクトリに設定
+nnoremap <Space>cd :cd %:h<CR>
+
 " QuickFix用
 nnoremap [QuickFix] <Nop>
 nmap <Space>q [QuickFix]
@@ -38,10 +41,14 @@ nnoremap [VimGrep] <Nop>
 nmap <Space>g [VimGrep]
 noremap <expr> [VimGrep] ':vimgrep /' . expand('<cword>') . '/ ' 
 
+
 " Unite {{{1
 nnoremap [Unite] <Nop>
 nmap <Space>u [Unite]
 nnoremap [Unite]b :<C-u>Unite -auto-resize -direction=dynamicbottom buffer<CR>
+nnoremap [Unite]f :<C-u>Unite -auto-resize -direction=dynamicbottom file<CR>
+nnoremap [Unite]m :<C-u>Unite -auto-resize -direction=dynamicbottom file_mru<CR>
+
 
 " VimFiler {{{1
 nnoremap [VimFiler] <Nop>
@@ -68,12 +75,18 @@ noremap [EasyAlign] <Nop>
 map <Space>a [EasyAlign]
 vmap [EasyAlign] <Plug>(EasyAlign)
 
+" vim-operator-replace {{{1
+nnoremap [operator-replace] <Nop>
+nmap _ [operator-replace]
+nmap [operator-replace] <Plug>(operator-replace)
+
+
 " vim-altr {{{1
 nnoremap [altr] <Nop>
-nmap <Space><Space> [altr]
+nmap <Space>s [altr]
 nmap [altr]f <Plug>(altr-forward)
 nmap [altr]b <Plug>(altr-back)
-" }}}
+
 " vim-easymotion {{{1
 nnoremap [EasyMotion] <Nop>
 nmap <Space>e [EasyMotion]
