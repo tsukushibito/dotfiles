@@ -23,6 +23,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'vim-scripts/TagHighlight'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -45,7 +46,7 @@ NeoBundle 'rhysd/vim-clang-format'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'osyo-manga/vim-marching.git'
-NeoBundle 'kana/vim_operator-replace'
+NeoBundle 'kana/vim-operator-replace'
 NeoBundle 'kana/vim-altr'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'Townk/vim-autoclose'
