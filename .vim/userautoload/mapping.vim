@@ -53,12 +53,13 @@ nnoremap [Unite]m :<C-u>Unite -auto-resize -direction=dynamicbottom file_mru<CR>
 " VimFiler {{{1
 nnoremap [VimFiler] <Nop>
 nmap <Space>f [VimFiler]
-if has('win32')
-    nnoremap [VimFiler]s :<C-u>VimFilerCurrentDir -split -simple -winwidth=40 -no-quit -toggle<CR>
-else
-    nnoremap [VimFiler]s :<C-u>VimFilerCurrentDir -split -simple -winwidth=45 -no-quit -toggle<CR>
-endif
-nnoremap [VimFiler]d :<C-u>VimFilerDouble -toggle<CR>
+nnoremap [VimFiler] :<C-u>VimFilerTab -simple<CR>
+" if has('win32')
+"     nnoremap [VimFiler]s :<C-u>VimFilerCurrentDir -split -simple -winwidth=40 -no-quit -toggle<CR>
+" else
+"     nnoremap [VimFiler]s :<C-u>VimFilerCurrentDir -split -simple -winwidth=45 -no-quit -toggle<CR>
+" endif
+" nnoremap [VimFiler]d :<C-u>VimFilerDouble -toggle<CR>
 
 " Neosnippet {{{1
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -89,7 +90,7 @@ nmap [altr]b <Plug>(altr-back)
 
 " vim-easymotion {{{1
 nnoremap [EasyMotion] <Nop>
-nmap <Space>e [EasyMotion]
+nmap <Space>m [EasyMotion]
 nmap [EasyMotion] <Plug>(easymotion-s2)
 " }}}
 
