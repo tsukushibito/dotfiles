@@ -64,4 +64,4 @@ NeoBundleCheck
 
 " Read setting files of each plugins
 " echom 'Reading setting files of each plubins.'
-" runtime! userautoload/plugin/*.vim
+runtime! userautoload/plugin/*.vim
