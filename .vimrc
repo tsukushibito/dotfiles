@@ -11,13 +11,11 @@ runtime! userautoload/*.vim
 
 function! s:initialDisplay()
     if @% == ''
-        cd ~
-        VimFiler
     else
         cd %:h
     endif
 endfunction
-autocmd VimEnter * call s:initialDisplay()
+" autocmd VimEnter * call s:initialDisplay()
 
 " doxygen-supportディレクトリ追加
 " if has('win32')

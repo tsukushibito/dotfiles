@@ -52,6 +52,7 @@ NeoBundle 'kana/vim-altr'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'easymotion/vim-easymotion'
+" NeoBundle 'Jeaye/color_coded'
 
 call neobundle#end()
 

@@ -53,12 +53,12 @@ nnoremap [Unite]m :<C-u>Unite -auto-resize -direction=dynamicbottom file_mru<CR>
 " VimFiler {{{1
 nnoremap [VimFiler] <Nop>
 nmap <Space>f [VimFiler]
-nnoremap [VimFiler] :<C-u>VimFilerTab -simple<CR>
-" if has('win32')
-"     nnoremap [VimFiler]s :<C-u>VimFilerCurrentDir -split -simple -winwidth=40 -no-quit -toggle<CR>
-" else
-"     nnoremap [VimFiler]s :<C-u>VimFilerCurrentDir -split -simple -winwidth=45 -no-quit -toggle<CR>
-" endif
+" nnoremap [VimFiler] :<C-u>VimFilerTab -simple<CR>
+if has('win32')
+    nnoremap [VimFiler] :<C-u>VimFilerCurrentDir -split -simple -winwidth=40 -force-quit -toggle<CR>
+else
+    nnoremap [VimFiler] :<C-u>VimFilerCurrentDir -split -simple -winwidth=45 -force-quit -toggle<CR>
+endif
 " nnoremap [VimFiler]d :<C-u>VimFilerDouble -toggle<CR>
 
 " Neosnippet {{{1
