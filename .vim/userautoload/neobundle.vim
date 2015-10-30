@@ -22,7 +22,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'Haron-Prime/evening_vim'
+NeoBundle 'vim-scripts/vilight.vim'
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'kristijanhusak/vim-hybrid-material'
+NeoBundle 'christophermca/meta5'
+NeoBundle 'h3xx/vim-late_evening'
+NeoBundle 'orthecreedence/void.vim'
 " NeoBundle 'vim-scripts/TagHighlight'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
