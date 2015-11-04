@@ -5,6 +5,7 @@ if neobundle#is_installed('vim-marching')
     if has('win32')
         let g:marching_clang_command = "C:/clang.exe"
     else
+        let g:marching_clang_command = "/usr/bin/clang"
     endif
 
     " オプションを追加する場合
@@ -20,6 +21,7 @@ if neobundle#is_installed('vim-marching')
     \   "C:/MinGW/lib/gcc/mingw32/4.6.2/include/c++",
     \   "C:/cpp/boost",
     \   "Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1",
+    \   "~/Documents/GitHub/TempuraEngine/Source"
     \]
 
     " neocomplete.vim と併用して使用する場合
