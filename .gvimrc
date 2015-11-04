@@ -14,10 +14,10 @@ let g:solarized_italic=0
 "    colorscheme vilight
 " if neobundle#is_installed('evening_vim')
 "    colorscheme evening
-" if neobundle#is_installed('vim-colors-solarized')
-"    colorscheme solarized
-if neobundle#is_installed('vim-hybrid')
-   colorscheme hybrid
+if neobundle#is_installed('vim-colors-solarized')
+   colorscheme solarized
+" if neobundle#is_installed('vim-hybrid')
+"    colorscheme hybrid
 else
 endif
 
