@@ -93,6 +93,11 @@ nnoremap [EasyMotion] <Nop>
 nmap <Space>m [EasyMotion]
 nmap [EasyMotion] <Plug>(easymotion-s2)
 " }}}
+" DoxygenToolkit {{{1
+nnoremap [DoxygenToolkit] <Nop>
+nmap <Space>d [DoxygenToolkit]
+nmap [DoxygenToolkit] <C-u>:Dox<CR>
+" }}}
 
 " vim: foldmethod=marker
 " vim: foldcolumn=3
