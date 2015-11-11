@@ -2,7 +2,8 @@
 scriptencoding utf-8
 " echom '[.vimrc]'
 
-set fileencoding=utf-8 bomb            " BOM付きにする
+set fileencoding=utf-8
+set bomb " BOM付きにする
 
 " 分割した設定ファイルの読み込み
 set runtimepath+=$HOME/.vim/

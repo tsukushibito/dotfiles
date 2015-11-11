@@ -35,6 +35,8 @@ nnoremap [QuickFix]n  :cnewer<Return>
 nnoremap [QuickFix]m  :make<Return>
 nnoremap [QuickFix]M  :make<Space>
 nnoremap [QuickFix]g  :grep<Space>
+nnoremap <C-n> :cnext<Return>
+nnoremap <C-p> :cprevious<Return>
 
 " vimgrep用
 nnoremap [VimGrep] <Nop>
