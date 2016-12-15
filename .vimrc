@@ -6,18 +6,10 @@ set fileencoding=utf-8
 set bomb " BOM付きにする
 
 " 分割した設定ファイルの読み込み
-set runtimepath+=$HOME/.vim/
+" set runtimepath+=$HOME/.vim/
+set runtimepath+=$HOME/.config/vim/
 " echom 'Read userautoload files.'
 runtime! userautoload/*.vim
-
-function! s:initialDisplay()
-    if @% == ''
-        cd ~
-    else
-        cd %:h
-    endif
-endfunction
-autocmd VimEnter * call s:initialDisplay()
 
 " doxygen-supportディレクトリ追加
 " if has('win32')

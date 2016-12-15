@@ -1,0 +1,63 @@
+[[plugins]]
+repo = 'vim-jp/vital.vim'
+
+[[plugins]]
+repo = 'tyru/restart.vim'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# [[plugins]]
+# repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+    let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+[[plugins]]
+repo = 'rking/ag.vim'
+
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'justmao945/vim-clang'
+on_ft = ['c', 'cpp']
+
+# [[plugins]]
+# repo = 'bbchung/clighter8'
+
+# [[plugins]]
+# repo = 'osyo-manga/vim-snowdrop'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'

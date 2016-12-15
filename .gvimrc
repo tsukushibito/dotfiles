@@ -1,32 +1,12 @@
 syntax enable
 set background=dark
-let g:solarized_italic=0
-
-" if neobundle#is_installed('void.vim')
-"    colorscheme void
-" if neobundle#is_installed('vim-late_evening')
-"    colorscheme late_evening
-" if neobundle#is_installed('vim-hybrid-material')
-"    colorscheme hybrid_reverse
-" if neobundle#is_installed('meta5')
-"    colorscheme meta5
-" if neobundle#is_installed('vilight.vim')
-"    colorscheme vilight
-" if neobundle#is_installed('evening_vim')
-"    colorscheme evening
-if neobundle#is_installed('vim-colors-solarized')
-   colorscheme solarized
-" if neobundle#is_installed('vim-hybrid')
-"    colorscheme hybrid
-else
-endif
 
 set showtabline=2
 if has('win32')
     set guifont=Consolas:h11
     set guifontwide=MS_Gothic:h11
 else
-    set guifont=Ricty:h14
+    set guifont=Ricty:h16
 endif
 let g:save_window_file = expand('~/.vimwinpos')
 augroup SaveWindow
