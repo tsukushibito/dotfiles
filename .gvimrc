@@ -3,8 +3,8 @@ set background=dark
 
 set showtabline=2
 if has('win32')
-    set guifont=Consolas:h11
-    set guifontwide=MS_Gothic:h11
+    set guifont=Consolas:h10
+    set guifontwide=MS_Gothic:h10
 else
     set guifont=Ricty:h16
 endif
