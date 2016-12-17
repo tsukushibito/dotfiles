@@ -1,4 +1,4 @@
-echom "~/.config/vim/userautoload/basic.vim"
+" echom "~/.config/vim/userautoload/basic.vim"
 set bomb           " BOMB
 
 set number         " 行番号を表示する

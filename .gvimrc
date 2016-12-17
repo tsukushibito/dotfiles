@@ -3,8 +3,8 @@ set background=dark
 
 set showtabline=2
 if has('win32')
-    set guifont=Consolas:h10
-    set guifontwide=MS_Gothic:h10
+    set guifont=Consolas:h12
+    set guifontwide=MS_Gothic:h12
 else
     set guifont=Ricty:h16
 endif
@@ -35,3 +35,5 @@ else
     autocmd FocusGained * set transparency=10
     autocmd FocusLost * set transparency=20
 endif
+
+colorscheme solarized

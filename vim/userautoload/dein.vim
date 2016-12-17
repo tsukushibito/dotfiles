@@ -1,14 +1,15 @@
-echom 'dein.vim'
+" echom 'dein.vim'
 " dein settings {{{
 " dein自体の自動インストール
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:dein_dir = s:cache_home . '/vim/dein'
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if !isdirectory(s:dein_repo_dir)
+    " echom 'clone dein'
     call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
 " let &runtimepath = s:dein_repo_dir .",". &runtimepath
-echom s:dein_repo_dir
+" echom s:dein_repo_dir
 execute "set runtimepath+=".s:dein_repo_dir
 " プラグイン読み込み＆キャッシュ作成
 let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein/dein.toml'
@@ -24,7 +25,4 @@ if has('vim_starting') && dein#check_install()
 endif
 " }}}
 
-" カラースキームをsolarizedに設定
-if dein#check_install(['altercation/vim-colors-solarized']) == 0
-    colorscheme solarized
-endi
+colorscheme solarized

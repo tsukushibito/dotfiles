@@ -10,20 +10,20 @@ repo = 'Shougo/dein.vim'
 # [[plugins]]
 # repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'Shougo/vimproc.vim'
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = 'tools\\update-dll-mingw'
-  elseif dein#util#_is_cygwin()
-    let cmd = 'make -f make_cygwin.mak'
-  elseif executable('gmake')
-    let cmd = 'gmake'
-  else
-    let cmd = 'make'
-  endif
-  let g:dein#plugin.build = cmd
-'''
+# [[plugins]]
+# repo = 'Shougo/vimproc.vim'
+# hook_post_update = '''
+#   if dein#util#_is_windows()
+#     let cmd = 'tools\\update-dll-mingw'
+#   elseif dein#util#_is_cygwin()
+#     let cmd = 'make -f make_cygwin.mak'
+#   elseif executable('gmake')
+#     let cmd = 'gmake'
+#   else
+#     let cmd = 'make'
+#   endif
+#   let g:dein#plugin.build = cmd
+# '''
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
@@ -31,8 +31,8 @@ repo = 'Shougo/unite.vim'
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 
-[[plugins]]
-repo = 'Shougo/vimshell.vim'
+# [[plugins]]
+# repo = 'Shougo/vimshell.vim'
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
