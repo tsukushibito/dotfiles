@@ -6,7 +6,7 @@ if has('win32')
     set guifont=Consolas:h10
     set guifontwide=MS_Gothic:h10
 else
-    set guifont=Ricty:h16
+    set guifont=Ricty:h15
 endif
 let g:save_window_file = expand('~/.vimwinpos')
 augroup SaveWindow
