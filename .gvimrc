@@ -36,4 +36,5 @@ else
     autocmd FocusLost * set transparency=20
 endif
 
+let g:solarized_italic=0
 colorscheme solarized
