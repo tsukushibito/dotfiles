@@ -79,6 +79,8 @@ set wildmenu wildmode=list:longest,full
 " コマンドラインの履歴を10000件保存する
 set history=10000
 
+" 折り返し表示にしない
+set nowrap
 
 " ビープの設定
 "ビープ音すべてを無効にする
