@@ -1,4 +1,7 @@
 [[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
 repo = 'vim-jp/vital.vim'
 
 [[plugins]]
@@ -6,9 +9,6 @@ repo = 'tyru/restart.vim'
 
 [[plugins]]
 repo = 'Shougo/dein.vim'
-
-# [[plugins]]
-# repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -24,6 +24,9 @@ hook_post_update = '''
   endif
   let g:dein#plugin.build = cmd
 '''
+
+# [[plugins]]
+# repo = 'Shougo/denite.nvim'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
