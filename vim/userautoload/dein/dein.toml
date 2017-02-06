@@ -60,8 +60,8 @@ on_ft = ['c', 'cpp']
 repo = 'rhysd/vim-clang-format'
 on_ft = ['c', 'cpp']
 
-# [[plugins]]
-# repo = 'bbchung/clighter8'
+[[plugins]]
+repo = 'bbchung/clighter8'
 
 # [[plugins]]
 # repo = 'osyo-manga/vim-snowdrop'
