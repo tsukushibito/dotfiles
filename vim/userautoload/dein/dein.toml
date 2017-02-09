@@ -68,3 +68,9 @@ repo = 'bbchung/clighter8'
 
 [[plugins]]
 repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'tsukushibito/incguard'
+
+[[plugins]]
+repo = 'vim-scripts/DoxygenToolkit.vim'
