@@ -1,2 +1,2 @@
 #!/bin/sh
-ln -s ~/dotfiles/.vim ~/.vim
+ln -rs ./.vim/ ~/.vim
