@@ -37,6 +37,10 @@ call plug#begin()
 Plug 'asvetliakov/vim-easymotion'
 call plug#end()
 
+" vim設定
+set ignorecase
+set smartcase
+
 " キーマッピング
 nmap <Leader>f <Plug>(easymotion-s2)
 
