@@ -26,9 +26,7 @@ elseif has("win32")
 endif
 
 if !empty(glob(s:plug_path))
-  echo glob(s:command)
   call system(s:command)
-  echo 'VimEnter * PlugInstall --sync | source $MYVIMRC'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -40,6 +38,7 @@ call plug#end()
 " vim設定
 set ignorecase
 set smartcase
+set clipboard=unnamed
 
 " キーマッピング
 let mapleader = "\<Space>" 
