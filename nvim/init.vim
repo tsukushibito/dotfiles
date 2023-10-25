@@ -1,5 +1,3 @@
-let mapleader = "\<Space>" 
-
 " WindowsのシェルはPowerShellにしておく
 if has('win32')
   set shell=C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
@@ -27,14 +25,16 @@ elseif has("win32")
 
 endif
 
-if empty(glob(s:plug_path))
+if !empty(glob(s:plug_path))
+  echo glob(s:command)
   call system(s:command)
+  echo 'VimEnter * PlugInstall --sync | source $MYVIMRC'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " プラグイン設定
 call plug#begin()
-Plug 'asvetliakov/vim-easymotion'
+  Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 " vim設定
@@ -42,7 +42,9 @@ set ignorecase
 set smartcase
 
 " キーマッピング
+let mapleader = "\<Space>" 
 nmap <Leader>f <Plug>(easymotion-s2)
+" nmap <Leader>f <Plug>(easymotion-prefix)
 
 " VSCode用設定
 if exists('g:vscode')
