@@ -1,0 +1,5 @@
+require("config.base")
+require("config.keymap")
+require("config.macos")
+require("config.windows")
+require("config.vscode")

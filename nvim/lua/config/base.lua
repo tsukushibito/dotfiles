@@ -1,12 +1,3 @@
--- WindowsのシェルはPowerShellにしておく
-if vim.fn.has('win32') == 1 then
-  print("Use PowerShell")
-  vim.o.shell='C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe'
-  vim.o.shellcmdflag='-c'
-  vim.o.shellquote='\"'
-  vim.o.shellxquote=''
-end
-
 -- vim設定
 vim.g.mapleader = " "
 
@@ -39,6 +30,3 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.ai = true             -- Auto Indent
 vim.opt.si = true             -- Smart indet
-
--- クリップボード使用
-vim.opt.clipboard:append{'unnamedplus'}
