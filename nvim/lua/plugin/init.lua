@@ -14,7 +14,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  require("plugin.colorscheme"),
   require("plugin.nvim-tree"),
   require("plugin.toggleterm"),
   require("plugin.hop"),
+  require("plugin.telescope"),
+  require("plugin.telescope-frecency"),
+  require("plugin.nvim-lspconfig"),
+  require("plugin.mason-lspconfig"),
+  require("plugin.nvim-cmp"),
 })
