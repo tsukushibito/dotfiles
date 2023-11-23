@@ -1,13 +1,13 @@
 return {
   'nvim-telescope/telescope.nvim', tag = '0.1.4',
   dependencies = { 'nvim-lua/plenary.nvim' },
-  event = 'VeryLazy',
+  keys = {
+    { '<leader>ff', '<Cmd>Telescope find_files<CR>' },
+    { '<leader>fg', '<Cmd>Telescope live_grep<CR>' },
+    { '<leader>fb', '<Cmd>Telescope buffers<CR>' },
+    { '<leader>fh', '<Cmd>Telescope help_tags<CR>' },
+  },
   config = function()
     require('telescope').setup()
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-    vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
   end
 }
