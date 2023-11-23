@@ -1,9 +1,10 @@
 return {
   'simrat39/rust-tools.nvim',
-  dependancis = {
+  dependencies = {
     'neovim/nvim-lspconfig',
     'nvim-lua/plenary.nvim',
     'mfussenegger/nvim-dap',
+    'folke/which-key.nvim',
   },
   ft = 'rust',
   config =function ()
@@ -80,10 +81,23 @@ return {
         standalone = true,
 
         on_attach = function(_, bufnr)
-          -- Hover actions
-          vim.keymap.set("n", "<Leader>h", rt.hover_actions.hover_actions, { buffer = bufnr })
-          -- Code action groups
-          vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+          local nopts = {
+            mode = "n",       -- NORMAL mode
+            buffer = bufnr,
+            silent = true,    -- use `silent` when creating keymaps
+            noremap = true,   -- use `noremap` when creating keymaps
+            nowait = true,    -- use `nowait` when creating keymaps
+          }
+          local mappings = {
+            ["<leader>"] = {
+              r = {
+                name = "+rust-tools",
+                h    = { rt.hover_actions.hover_actions,            "Hover actions" },
+                a    = { rt.code_action_group.code_action_group,    "Code action groups" },
+              },
+            },
+          }
+          require('which-key').register(mappings, nopts)
         end,
       }, -- rust-analyzer options
 

@@ -19,11 +19,10 @@ require('lazy').setup({
   require('plugin.toggleterm'),
   require('plugin.hop'),
   require('plugin.telescope'),
-  require('plugin.telescope-frecency'),
   require('plugin.nvim-lspconfig'),
   require('plugin.mason-lspconfig'),
   require('plugin.nvim-cmp'),
   require('plugin.nvim-dap'),
-  require('plugin.nvim-dap-ui'),
   require('plugin.rust-tools'),
+  require('plugin.which-key'),
 })
