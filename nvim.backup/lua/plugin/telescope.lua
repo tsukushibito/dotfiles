@@ -25,6 +25,7 @@ return {
         T = {
           name = "+telescope",
           m     = { "<cmd>Telescope harpoon marks<cr>",             "Search Harpoons" },
+          b     = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Buffer fuzzy find" },
           f     = { '<cmd>Telescope find_files<cr>',                "Find Files" },
           g     = { '<cmd>Telescope live_grep<cr>',                 "Grep" },
           o     = { '<cmd>Telescope oldfiles<cr>',                  "Recently Opened" },

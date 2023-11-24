@@ -30,3 +30,14 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.ai = true             -- Auto Indent
 vim.opt.si = true             -- Smart indet
+
+vim.opt.list = true
+vim.opt.listchars = {
+  tab = '→ ',
+  -- eol = '¬',
+  trail = '⋅',
+--  space = '⋅',
+  extends = '❯',
+  precedes = '❮',
+  nbsp = '%',
+}

@@ -25,4 +25,8 @@ require('lazy').setup({
   require('plugin.nvim-dap'),
   require('plugin.rust-tools'),
   require('plugin.which-key'),
+  require('plugin.lualine'),
+  require('plugin.bufferline'),
+  require('plugin.indent-blankline'),
+  require('plugin.nvim-treesitter'),
 })
