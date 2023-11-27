@@ -1,16 +1,16 @@
 import:
- - ~/.config/alacritty/themes/themes/tokyo-night.yaml
+ - ~/.config/alacritty/themes/themes/github_dark_tritanopia.yaml
 font:
   size: 12
   normal:
-    family: 'Hack Nerd Font Mono'
+    family: 'Hack Nerd Font'
 
 window:
   dimensions:
     columns: 184
     lines: 46
   decorations: full
-  opacity: 0.9
+  opacity: 1.0
   padding:
     x: 8
     y: 4

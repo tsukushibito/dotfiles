@@ -19,5 +19,7 @@ require('lazy').setup({
   require('plugins.utility'),
   require('plugins.fuzzy_finder'),
   require('plugins.lsp'),
+  require('plugins.dap'),
   require('plugins.git'),
+  require('plugins.rust-tools'),
 })

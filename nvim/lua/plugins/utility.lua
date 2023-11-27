@@ -2,11 +2,6 @@ return {
   {
     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
-    config = function ()
-      require('which-key').register({
-        ['<leader>t'] = { name = '[T]oggleTerm', _ = 'which_key_ignore' },
-      })
-    end,
   },
 
   {
@@ -38,7 +33,7 @@ return {
     'akinsho/bufferline.nvim',
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
-    config =function ()
+    config = function()
       require('bufferline').setup({
         options = {
           mode = "tabs",
@@ -76,7 +71,7 @@ return {
     config = function()
       require("nvim-tree").setup({
         view = {
-          float = { 
+          float = {
             enable = true,
           },
         },
@@ -92,7 +87,7 @@ return {
     },
     build = ':TSUpdate',
     event = 'VeryLazy',
-    config = function ()
+    config = function()
       -- [[ Configure Treesitter ]]
       -- See `:help nvim-treesitter`
       -- Defer Treesitter setup after first render to improve startup time of 'nvim {filename}'
@@ -167,15 +162,23 @@ return {
   {
     'akinsho/toggleterm.nvim',
     dependencies = {
-     'folke/which-key.nvim',
+      {
+        'folke/which-key.nvim',
+        optional = true,
+        opts = {
+          defaults = {
+            ["<leader>t"] = { name = "ToggleTerm" },
+          },
+        },
+      }
     },
     keys = {
-      { '<leader>th', '<cmd>ToggleTerm direction=horizontal<cr>', desc='Horizontal' },
-      { '<leader>tv', '<cmd>ToggleTerm size=40 direction=vertical<cr>', desc='Vertical' },
-      { '<leader>tf', '<cmd>ToggleTerm direction=float<cr>', desc='Float' },
-      { '<leader>tt', '<cmd>ToggleTerm direction=tab<cr>', desc='Tab' },
+      { '<leader>th', '<cmd>ToggleTerm direction=horizontal<cr>',       desc = 'Horizontal' },
+      { '<leader>tv', '<cmd>ToggleTerm size=40 direction=vertical<cr>', desc = 'Vertical' },
+      { '<leader>tf', '<cmd>ToggleTerm direction=float<cr>',            desc = 'Float' },
+      { '<leader>tt', '<cmd>ToggleTerm direction=tab<cr>',              desc = 'Tab' },
     },
-    config = function ()
+    config = function()
       require('toggleterm').setup()
       vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
       vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]])
@@ -184,5 +187,15 @@ return {
       vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
       vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]])
     end
-  }
+  },
+
+  {
+    'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'InsertEnter',
+    config = function()
+      require('nvim-surround').setup({
+      })
+    end
+  },
 }
