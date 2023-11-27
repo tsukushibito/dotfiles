@@ -67,6 +67,9 @@ if vim.fn.has('win32') == 1 then
   vim.o.shellcmdflag='-c'
   vim.o.shellquote='\"'
   vim.o.shellxquote=''
+
+  -- クリップボード使用
+  vim.opt.clipboard:append{'unnamedplus'}
 end
 
 -- VSCode用設定
