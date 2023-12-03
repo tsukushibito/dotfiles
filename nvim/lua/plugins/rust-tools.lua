@@ -59,7 +59,7 @@ return {
           other_hints_prefix = "=> ",
 
           -- whether to align to the length of the longest line in the file
-          max_len_align = false,
+          max_len_align = true,
 
           -- padding from the left if max_len_align is true
           max_len_align_padding = 1,
@@ -118,6 +118,15 @@ return {
             { desc = 'Hover Actions', buffer = bufnr })
           vim.keymap.set('n', '<F5>', require('rust-tools').debuggables.debuggables,
             { desc = 'Rust Debuggables', buffer = bufnr })
+          vim.keymap.set('n', '<leader>L', vim.diagnostic.open_float, { desc = 'Open Diagnostic', buffer = bufnr })
+
+          vim.diagnostic.config({
+            virtual_text = false,
+          })
+
+          -- Auto format on save
+          -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format({ filetypes = {'rust'} })]]
+          vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
         end,
       }, -- rust-analyzer options
 

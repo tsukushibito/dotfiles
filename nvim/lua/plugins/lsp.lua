@@ -5,6 +5,9 @@ return {
     -- Automatically install LSPs to stdpath for neovim
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    {
+      'WhoIsSethDaniel/mason-tool-installer.nvim'
+    },
 
     -- Useful status updates for LSP
     { 'j-hui/fidget.nvim', opts = {} },
@@ -32,7 +35,7 @@ return {
     'folke/which-key.nvim',
   },
   event = 'VeryLazy',
-  config = function ()
+  config = function()
     -- [[ Configure LSP ]]
     --  This function gets run when an LSP connects to a particular buffer.
     local on_attach = function(_, bufnr)
@@ -103,7 +106,7 @@ return {
       ensure_installed = vim.tbl_keys(servers),
     }
 
-    mason_lspconfig.setup_handlers {
+    mason_lspconfig.setup_handlers({
       function(server_name)
         require('lspconfig')[server_name].setup {
           capabilities = capabilities,
@@ -112,7 +115,7 @@ return {
           filetypes = (servers[server_name] or {}).filetypes,
         }
       end,
-    }
+    })
 
     -- [[ Configure nvim-cmp ]]
     local cmp = require 'cmp'
@@ -163,6 +166,5 @@ return {
         { name = 'luasnip' },
       },
     }
-
   end
 }

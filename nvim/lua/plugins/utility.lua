@@ -66,13 +66,13 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     keys = {
-      { '<leader>e', '<cmd>NvimTreeToggle<cr>', desc = 'NvimTreeToggle' }
+      { '<leader>E', '<cmd>NvimTreeToggle<cr>', desc = 'NvimTreeToggle' }
     },
     config = function()
       require("nvim-tree").setup({
         view = {
           float = {
-            enable = true,
+            enable = false,
           },
         },
       })
