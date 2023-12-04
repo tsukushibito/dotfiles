@@ -17,27 +17,27 @@ vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.hlsearch = true
 vim.opt.backup = false
-vim.opt.showcmd = true        -- 右下にまだ実行していないコマンドを表示
+vim.opt.showcmd = true -- 右下にまだ実行していないコマンドを表示
 vim.opt.cmdheight = 1
-vim.opt.laststatus = 2        -- 常にステータスラインを表示
+vim.opt.laststatus = 2 -- 常にステータスラインを表示
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
 -- vim.opt.shell = 'fish'
 vim.opt.backupskip = '/tmp/*,/private/tmp/*'
-vim.opt.inccommand = 'split'     -- 文字列置換をインタラクティブに表示する
+vim.opt.inccommand = 'split' -- 文字列置換をインタラクティブに表示する
 vim.opt.smarttab = true
 vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.ai = true             -- Auto Indent
-vim.opt.si = true             -- Smart indet
+vim.opt.ai = true -- Auto Indent
+vim.opt.si = true -- Smart indet
 
 vim.opt.list = true
 vim.opt.listchars = {
   tab = '→ ',
   -- eol = '¬',
   trail = '⋅',
---  space = '⋅',
+  --  space = '⋅',
   extends = '❯',
   precedes = '❮',
   nbsp = '%',
@@ -57,25 +57,27 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Mac用設定
 if vim.fn.has('mac') == 1 then
   -- クリップボード使用
-  vim.opt.clipboard:append{'unnamedplus'}
+  vim.opt.clipboard:append { 'unnamedplus' }
 end
 
 -- Windows用設定
 if vim.fn.has('win32') == 1 then
-  print("Use PowerShell")
-  vim.o.shell='C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe'
-  vim.o.shellcmdflag='-c'
-  vim.o.shellquote='\"'
-  vim.o.shellxquote=''
+  -- print("Use PowerShell")
+  -- vim.o.shell='C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe'
+  -- vim.o.shellcmdflag='-c'
+  -- vim.o.shellquote='\"'
+  -- vim.o.shellxquote=''
 
   -- クリップボード使用
-  vim.opt.clipboard:append{'unnamedplus'}
+  vim.opt.clipboard:append { 'unnamedplus' }
 end
 
 -- VSCode用設定
 if vim.g.vscode then
   -- gTキーを押したときのマッピング
-  vim.api.nvim_set_keymap('n', 'gT', "<cmd>lua VSCodeNotify('workbench.action.previousEditor')<cr>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', 'gT', "<cmd>lua VSCodeNotify('workbench.action.previousEditor')<cr>",
+    { noremap = true, silent = true })
   -- gtキーを押したときのマッピング
-  vim.api.nvim_set_keymap('n', 'gt', "<cmd>lua VSCodeNotify('workbench.action.nextEditor')<cr>", { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', 'gt', "<cmd>lua VSCodeNotify('workbench.action.nextEditor')<cr>",
+    { noremap = true, silent = true })
 end

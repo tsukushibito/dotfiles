@@ -1,22 +1,35 @@
+local dependencies = {
+  'nvim-lua/plenary.nvim',
+  'folke/which-key.nvim',
+  "nvim-telescope/telescope-file-browser.nvim",
+};
+
+
+-- Fuzzy Finder Algorithm which requires local dependencies to be built.
+-- Only load if `make` is available. Make sure you have the system
+-- requirements installed.
+-- Windows用設定
+if vim.fn.has('win32') == 1 then
+  table.insert(dependencies, {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build =
+    'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+  });
+else
+  table.insert(dependencies, {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+    cond = function()
+      return vim.fn.executable 'make' == 1
+    end,
+  });
+end
+
 -- Fuzzy Finder (files, lsp, etc)
 return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'folke/which-key.nvim',
-    -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-    -- Only load if `make` is available. Make sure you have the system
-    -- requirements installed.
-    {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = 'make',
-      cond = function()
-        return vim.fn.executable 'make' == 1
-      end,
-    },
-    "nvim-telescope/telescope-file-browser.nvim",
-  },
+  dependencies = dependencies,
   keys = {
     { '<leader>?',       '<cmd>Telescope oldfiles<cr>',     desc = '[?] Find recently opened files' },
     { '<leader><space>', '<cmd>Telescope buffers<cr>',      desc = '[ ] Find existing buffers' },
