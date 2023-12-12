@@ -133,9 +133,15 @@ return {
       -- debugging stuff
       -- dap = {
       --   adapter = require('rust-tools.dap').get_codelldb_adapter(
-      --     codelldb_path, liblldb_path)
+      --   codelldb_path, liblldb_path)
       -- }
     }
+    if this_os:find "Windows" then
+      opts.dap = {
+        adapter = require('rust-tools.dap').get_codelldb_adapter(
+          codelldb_path, liblldb_path)
+      }
+    end
     require('rust-tools').setup(opts)
   end
 }

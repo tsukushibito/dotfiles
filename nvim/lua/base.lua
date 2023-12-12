@@ -74,10 +74,9 @@ end
 
 -- VSCode用設定
 if vim.g.vscode then
-  -- gTキーを押したときのマッピング
-  vim.api.nvim_set_keymap('n', 'gT', "<cmd>lua VSCodeNotify('workbench.action.previousEditor')<cr>",
-    { noremap = true, silent = true })
-  -- gtキーを押したときのマッピング
-  vim.api.nvim_set_keymap('n', 'gt', "<cmd>lua VSCodeNotify('workbench.action.nextEditor')<cr>",
-    { noremap = true, silent = true })
+  local vscode = require('vscode-neovim');
+  -- gTキーで前のタブに移動
+  vim.keymap.set('n', 'gT', '<cmd>lua require("vscode-neovim").call("workbench.action.previousEditor")<cr>', { noremap = true, silent = true});
+  -- gtキーで次のタブに移動
+  vim.keymap.set('n', 'gt', '<cmd>lua require("vscode-neovim").call("workbench.action.nextEditor")<cr>', { noremap = true, silent = true});
 end

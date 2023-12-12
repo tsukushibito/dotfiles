@@ -12,14 +12,20 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   }
 end
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath);
 
-require('lazy').setup({
-  require('plugins.colorscheme'),
-  require('plugins.utility'),
-  require('plugins.fuzzy_finder'),
-  require('plugins.lsp'),
-  require('plugins.dap'),
-  require('plugins.git'),
-  require('plugins.rust-tools'),
-})
+if vim.g.vscode then
+  require('lazy').setup({
+    require('plugins.utility'),
+  });
+else
+  require('lazy').setup({
+    require('plugins.colorscheme'),
+    require('plugins.utility'),
+    require('plugins.fuzzy_finder'),
+    require('plugins.lsp'),
+    require('plugins.dap'),
+    require('plugins.git'),
+    require('plugins.rust-tools'),
+  });
+end
