@@ -2,7 +2,7 @@ return {
   {
     'navarasu/onedark.nvim',
     priority = 1000,
-    -- config = function()
+    -- init = function()
     --   vim.cmd.colorscheme 'onedark'
     -- end,
   },
@@ -10,9 +10,9 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
-    init = function()
-      vim.cmd('colorscheme tokyonight-night')
-    end
+    -- init = function()
+    --   vim.cmd.colorscheme 'tokyonight-night'
+    -- end
   },
   {
     'Mofiqul/vscode.nvim',
@@ -53,9 +53,12 @@ return {
     'projekt0n/github-nvim-theme',
     lazy = false,
     priority = 1000,
-    config = function()
-      require('github-theme').setup({})
-    end,
+    -- config = function()
+    --   require('github-theme').setup({})
+    -- end,
+    init = function()
+      vim.cmd.colorscheme 'github_dark_high_contrast'
+    end
   },
   {
     'shaunsingh/nord.nvim',
@@ -74,6 +77,18 @@ return {
   },
   {
     'glepnir/zephyr-nvim',
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "bluz71/vim-nightfly-colors",
+    name = "nightfly",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "w0ng/vim-hybrid",
+    name = "hybrid",
     lazy = false,
     priority = 1000,
   },

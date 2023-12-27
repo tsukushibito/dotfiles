@@ -90,6 +90,13 @@ return {
           telemetry = { enable = false },
         },
       },
+      pyright = {
+        python = {
+          analysis = {
+            autoSearchPaths = true,
+          },
+        },
+      },
     }
 
     -- Setup neovim lua configuration
