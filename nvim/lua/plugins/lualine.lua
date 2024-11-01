@@ -1,13 +1,13 @@
 return {
-  { 'nvim-tree/nvim-web-devicons', },
+  { "nvim-tree/nvim-web-devicons", },
   {
-    'nvim-lualine/lualine.nvim',
+    "nvim-lualine/lualine.nvim",
     opts = {
       options = {
         icons_enabled = false,
         theme = "tokyonight",
-        component_separators = '|',
-        section_separators = '',
+        component_separators = "|",
+        section_separators = "",
       },
     },
   },
