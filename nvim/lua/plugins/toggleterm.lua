@@ -1,0 +1,29 @@
+return {
+  "akinsho/toggleterm.nvim",
+  lazy = true,
+  keys = {
+    { '<C-\\>', '<cmd>ToggleTerm<CR>', desc = 'Toggle terminal' },
+    { '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<CR>', desc = 'Horizontal terminal' },
+    { '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<CR>', desc = 'Vertical terminal' },
+    { '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', desc = 'Floating terminal' },
+    { '<leader>t1', '<cmd>ToggleTerm 1<CR>', desc = 'Toggle terminal 1' },
+    { '<leader>t2', '<cmd>ToggleTerm 2<CR>', desc = 'Toggle terminal 2' },
+    { '<leader>t3', '<cmd>ToggleTerm 3<CR>', desc = 'Toggle terminal 3' },
+  },
+  config = function()
+    require('toggleterm').setup{
+      open_mapping = [[<C-\>]],
+      direction = 'float',
+      float_opts = {
+        border = 'curved',
+      },
+    }
+
+    local opts = { noremap = true, silent = true }
+    vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], opts)
+    vim.api.nvim_set_keymap('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
+    vim.api.nvim_set_keymap('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
+    vim.api.nvim_set_keymap('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
+    vim.api.nvim_set_keymap('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+  end,
+}
