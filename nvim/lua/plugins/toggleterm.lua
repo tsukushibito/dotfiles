@@ -1,17 +1,18 @@
 return {
   "akinsho/toggleterm.nvim",
+  cond = not vim.g.vscode,
   lazy = true,
   keys = {
-    { '<C-\\>', '<cmd>ToggleTerm<CR>', desc = 'Toggle terminal' },
+    { '<C-\\>',     '<cmd>ToggleTerm<CR>',                              desc = 'Toggle terminal' },
     { '<leader>th', '<cmd>ToggleTerm size=10 direction=horizontal<CR>', desc = 'Horizontal terminal' },
-    { '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<CR>', desc = 'Vertical terminal' },
-    { '<leader>tf', '<cmd>ToggleTerm direction=float<CR>', desc = 'Floating terminal' },
-    { '<leader>t1', '<cmd>ToggleTerm 1<CR>', desc = 'Toggle terminal 1' },
-    { '<leader>t2', '<cmd>ToggleTerm 2<CR>', desc = 'Toggle terminal 2' },
-    { '<leader>t3', '<cmd>ToggleTerm 3<CR>', desc = 'Toggle terminal 3' },
+    { '<leader>tv', '<cmd>ToggleTerm size=80 direction=vertical<CR>',   desc = 'Vertical terminal' },
+    { '<leader>tf', '<cmd>ToggleTerm direction=float<CR>',              desc = 'Floating terminal' },
+    { '<leader>t1', '<cmd>ToggleTerm 1<CR>',                            desc = 'Toggle terminal 1' },
+    { '<leader>t2', '<cmd>ToggleTerm 2<CR>',                            desc = 'Toggle terminal 2' },
+    { '<leader>t3', '<cmd>ToggleTerm 3<CR>',                            desc = 'Toggle terminal 3' },
   },
   config = function()
-    require('toggleterm').setup{
+    require('toggleterm').setup {
       open_mapping = [[<C-\>]],
       direction = 'float',
       float_opts = {

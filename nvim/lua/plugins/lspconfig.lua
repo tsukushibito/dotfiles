@@ -1,4 +1,8 @@
-local on_attach = require("lsp.on_attach")
+if vim.g.vscode then
+  return
+end
+
+local on_attach = require("lsp.on_attach").on_attach
 return {
   { "williamboman/mason.nvim", lazy = true, },
   {

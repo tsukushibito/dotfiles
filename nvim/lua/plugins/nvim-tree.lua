@@ -2,9 +2,10 @@ return {
   { "nvim-tree/nvim-web-devicons", lazy = true },
   {
     "nvim-tree/nvim-tree.lua",
+    cond = not vim.g.vscode,
     lazy = false,
     keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<cr>",   desc = "Toggle NvimTree" },
+      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
     },
     config = function()
       require('nvim-tree').setup()
