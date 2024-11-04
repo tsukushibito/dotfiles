@@ -1,7 +1,9 @@
 return {
-  { "nvim-tree/nvim-web-devicons", lazy = true },
   {
     "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons", lazy = true },
+    },
     cond = not vim.g.vscode,
     lazy = false,
     keys = {

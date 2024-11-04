@@ -1,10 +1,12 @@
 return {
-  { "nvim-lua/plenary.nvim",                      lazy = true, },
-  { "nvim-telescope/telescope-file-browser.nvim", lazy = true, },
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     cond = not vim.g.vscode,
+    dependencies = {
+      { "nvim-lua/plenary.nvim", },
+      { "nvim-telescope/telescope-file-browser.nvim", },
+    },
     lazy = true,
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<cr>",   desc = "Find Files" },
