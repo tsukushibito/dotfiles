@@ -10,7 +10,8 @@ return {
       { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
     },
     config = function()
-      require('nvim-tree').setup()
+      require('nvim-tree').setup({
+      })
 
       --[[
       local function open_nvim_tree(data)
