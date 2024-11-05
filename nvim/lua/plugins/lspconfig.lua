@@ -1,5 +1,5 @@
 if vim.g.vscode then
-  return
+  return {}
 end
 
 local on_attach = require("lsp.on_attach").on_attach
