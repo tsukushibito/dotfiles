@@ -73,12 +73,3 @@ if vim.fn.has("win32") == 1 then
   -- クリップボード使用
   vim.opt.clipboard:append { "unnamedplus" }
 end
-
--- VSCode用設定
-if vim.g.vscode then
-  local vscode = require("vscode-neovim");
-  vim.keymap.set("n", "<S-h>", "<cmd>lua require('vscode-neovim').call('workbench.action.previousEditor')<cr>",
-    { noremap = true, silent = true });
-  vim.keymap.set("n", "<S-l>", "<cmd>lua require('vscode-neovim').call('workbench.action.nextEditor')<cr>",
-    { noremap = true, silent = true });
-end

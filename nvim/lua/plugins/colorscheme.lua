@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return {}
+end
+
 return {
   {
     "folke/tokyonight.nvim",
@@ -12,9 +16,7 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      if not vim.g.vscode then
         vim.cmd([[colorscheme vscode]])
-      end
     end,
   },
 }
