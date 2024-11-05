@@ -8,6 +8,16 @@ return {
     lazy = false,
     keys = {
       { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
+      {
+        "<C-,>",
+        function()
+          local config_path = vim.fn.stdpath("config")
+          vim.cmd("NvimTreeOpen " .. config_path)
+        end,
+        desc = "Open NvimTree at config directory",
+        noremap = true,
+        silent = true,
+      }
     },
     config = function()
       require('nvim-tree').setup({

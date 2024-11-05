@@ -20,6 +20,11 @@ M.on_attach = function(client, bufnr)
     vim.tbl_extend("force", opts, { desc = "Show Diagnostics" }))
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, vim.tbl_extend("force", opts, { desc = "Previous Diagnostic" }))
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, vim.tbl_extend("force", opts, { desc = "Next Diagnostic" }))
+  vim.keymap.set('n', '<leader>ih', function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local current_setting = vim.lsp.inlay_hint.is_enabled({ bufnr })
+    vim.lsp.inlay_hint.enable(not current_setting, { bufnr })
+  end, { noremap = true, silent = true, desc = "Toggle Inlay Hints" })
 
   -- 手動フォーマットのキーマッピング
   vim.keymap.set('n', '<leader>lf', function()
