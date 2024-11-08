@@ -27,7 +27,7 @@ return {
             server_config.setup(opts)
           else
             if server_name == "rust_analyzer" then
-              require("lspconfig")[server_name] = function() end
+              require("lspconfig")[server_name] = {}
             else
               require("lspconfig")[server_name].setup(opts)
             end

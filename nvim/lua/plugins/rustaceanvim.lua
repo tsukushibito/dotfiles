@@ -8,6 +8,7 @@ return {
   config = function()
     vim.g.rustaceanvim = {
       server = {
+        on_attach = require("lsp.on_attach").on_attach,
         settings = {
           ["rust-analyzer"] = {
             cargo = { allFeatures = true },
@@ -15,7 +16,12 @@ return {
             hoverActions = { enable = true },
           }
         },
-      }
+      },
+      tools = {
+        float_win_config = {
+          border = "rounded",
+        },
+      },
     }
   end,
 }
