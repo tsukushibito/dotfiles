@@ -4,7 +4,7 @@ end
 
 local on_attach = require("lsp.on_attach").on_attach
 return {
-  { "williamboman/mason.nvim", lazy = true, },
+  { "williamboman/mason.nvim", },
   {
     "williamboman/mason-lspconfig.nvim",
     lazy = true,
