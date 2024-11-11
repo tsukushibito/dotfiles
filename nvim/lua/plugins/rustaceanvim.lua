@@ -42,14 +42,17 @@ return {
             adapter = get_codelldb_adapter(),
           }
           vim.g.rustaceanvim.dap = dap
-          vim.keymap.set("n", "K", function()
+          local opts = { noremap = true, silent = true, buffer = bufnr }
+          vim.keymap.set("n", "K",
+            function()
               vim.cmd.RustLsp({ "hover", "actions" })
             end,
-            { noremap = true, silent = true, desc = "RustLsp hover actions" })
-          vim.keymap.set("n", "<leader>ca", function()
+            vim.tbl_extend("force", opts, { desc = "RustLsp hover actions" }))
+          vim.keymap.set("n", "<leader>la",
+            function()
               vim.cmd.RustLsp({ "codeAction" })
             end,
-            { noremap = true, silent = true, desc = "RustLsp codeActions" })
+            vim.tbl_extend("force", opts, { desc = "RustLsp codeActions" }))
         end,
         settings = {
           ["rust-analyzer"] = {
