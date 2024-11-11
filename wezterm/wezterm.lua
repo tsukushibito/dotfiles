@@ -1,10 +1,16 @@
 local wezterm = require("wezterm")
+local is_windows = wezterm.target_triple:find("windows")
+
 local config = wezterm.config_builder()
 
 config.automatically_reload_config = true
 wezterm.on("window-config-reloaded", function(window, pane)
   wezterm.log_info("teh config was reloaded for this window!")
 end)
+
+if is_windows then
+  config.default_prog = { "powershell.exe" }
+end
 
 local mux = wezterm.mux
 wezterm.on("gui-startup", function(cmd)
