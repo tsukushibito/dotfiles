@@ -26,6 +26,7 @@ end
 
 return {
   "mrcjkb/rustaceanvim",
+  cond = not vim.g.vscode,
   version = "^5", -- Recommended
   lazy = false,   -- This plugin is already lazy
   dependencies = {

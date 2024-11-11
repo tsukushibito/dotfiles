@@ -67,7 +67,7 @@ RestoreWindowGeometry = false
 ## In Windows
 # FontFamily = "Windows"
 ## Fontsize is
-FontSize = 13
+# FontSize = 13
 ## letterspace is
 # Letterspace = 0
 
