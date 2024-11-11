@@ -4,16 +4,19 @@ end
 
 local on_attach = require("lsp.on_attach").on_attach
 return {
-  { "williamboman/mason.nvim", },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = true,
-    opts = {
-      automatic_installation = true,
-    },
-  },
   {
     "neovim/nvim-lspconfig",
+    cond = not vim.g.vscode,
+    lazy = true,
+    dependencies = {
+      { "williamboman/mason.nvim", },
+      {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+          automatic_installation = true,
+        },
+      },
+    },
     opts = {
       on_attach = on_attach,
       flags = { debounce_text_changes = 150 },

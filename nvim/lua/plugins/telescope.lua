@@ -3,11 +3,11 @@ return {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     cond = not vim.g.vscode,
+    lazy = true,
     dependencies = {
       { "nvim-lua/plenary.nvim", },
       { "nvim-telescope/telescope-file-browser.nvim", },
     },
-    lazy = true,
     keys = {
       { "<leader>ff", "<cmd>Telescope find_files<cr>",   desc = "Find Files" },
       { "<leader>fg", "<cmd>Telescope live_grep<cr>",    desc = "Live Grep" },

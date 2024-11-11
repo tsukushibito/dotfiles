@@ -1,11 +1,11 @@
 return {
   {
     "nvim-tree/nvim-tree.lua",
-    dependencies = {
-      { "nvim-tree/nvim-web-devicons", lazy = true },
-    },
     cond = not vim.g.vscode,
     lazy = false,
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+    },
     keys = {
       {
         "<leader>,",

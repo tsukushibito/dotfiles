@@ -1,6 +1,7 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    cond = not vim.g.vscode,
     dependencies = {
       { "hrsh7th/cmp-nvim-lsp", },
       { "hrsh7th/cmp-buffer", },
@@ -10,7 +11,6 @@ return {
       { "saadparwaiz1/cmp_luasnip", },
       { "onsails/lspkind-nvim", },
     },
-    cond = not vim.g.vscode,
     config = function()
       local cmp = require("cmp")
       local luasnip = require("luasnip")

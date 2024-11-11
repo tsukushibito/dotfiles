@@ -1,6 +1,8 @@
 return {
   { -- debug
     "mfussenegger/nvim-dap",
+    cond = not vim.g.vscode,
+    lazy = true,
     config = function()
       local dap = require("dap")
 
@@ -13,6 +15,8 @@ return {
   },
   {
     "rcarriga/nvim-dap-ui",
+    cond = not vim.g.vscode,
+    lazy = true,
     dependencies = {
       "mfussenegger/nvim-dap",
       "nvim-neotest/nvim-nio",

@@ -12,6 +12,10 @@ wezterm.on("gui-startup", function(cmd)
   window:gui_window():toggle_fullscreen()
 end)
 
+config.hide_tab_bar_if_only_one_tab = true
+config.scrollback_lines = 3500
+config.use_ime = true
+
 config.color_scheme = 'Vs Code Dark+ (Gogh)'
 
 config.font = wezterm.font({
@@ -30,12 +34,22 @@ wezterm.on("toggle-opacity", function(window, pane)
   window:set_config_overrides(overrides)
 end)
 
+config.leader = { key = "b", mods = "ALT", timeout_milliseconds = 2000, }
 config.keys = {
   {
     key = "B",
     mods = "CTRL",
     action = wezterm.action.EmitEvent("toggle-opacity"),
   },
+
+  { key = "t", mods = 'LEADER', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
+  { key = "w", mods = 'LEADER', action = wezterm.action.CloseCurrentTab { confirm = true } },
+  { key = "|", mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
+  { key = "d", mods = 'LEADER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+  { key = "h", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Left' },
+  { key = "l", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Right' },
+  { key = "k", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Up' },
+  { key = "j", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Down' },
 }
 
 return config
