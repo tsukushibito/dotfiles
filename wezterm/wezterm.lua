@@ -36,12 +36,7 @@ end)
 
 config.leader = { key = "b", mods = "ALT", timeout_milliseconds = 2000, }
 config.keys = {
-  {
-    key = "B",
-    mods = "CTRL",
-    action = wezterm.action.EmitEvent("toggle-opacity"),
-  },
-
+  { key = "o", mods = "LEADER", action = wezterm.action.EmitEvent("toggle-opacity"), },
   { key = "t", mods = 'LEADER', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
   { key = "w", mods = 'LEADER', action = wezterm.action.CloseCurrentTab { confirm = true } },
   { key = "|", mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },

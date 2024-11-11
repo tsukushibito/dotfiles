@@ -42,7 +42,7 @@ return {
             adapter = get_codelldb_adapter(),
           }
           vim.g.rustaceanvim.dap = dap
-          local opts = { noremap = true, silent = true, buffer = bufnr }
+          -- local opts = { noremap = true, silent = true, buffer = bufnr }
         end,
         settings = {
           ["rust-analyzer"] = {
