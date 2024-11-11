@@ -43,16 +43,6 @@ return {
           }
           vim.g.rustaceanvim.dap = dap
           local opts = { noremap = true, silent = true, buffer = bufnr }
-          vim.keymap.set("n", "K",
-            function()
-              vim.cmd.RustLsp({ "hover", "actions" })
-            end,
-            vim.tbl_extend("force", opts, { desc = "RustLsp hover actions" }))
-          vim.keymap.set("n", "<leader>la",
-            function()
-              vim.cmd.RustLsp({ "codeAction" })
-            end,
-            vim.tbl_extend("force", opts, { desc = "RustLsp codeActions" }))
         end,
         settings = {
           ["rust-analyzer"] = {

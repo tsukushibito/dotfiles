@@ -9,14 +9,27 @@ return {
     cond = not vim.g.vscode,
     -- lazy = true,
     dependencies = {
+      { "williamboman/mason.nvim", },
       {
         "williamboman/mason-lspconfig.nvim",
-        dependencies = {
-          { "williamboman/mason.nvim", },
-        },
+        opts = { automatic_installation = true }
+      },
+      {
+        "nvimdev/lspsaga.nvim",
         opts = {
-          automatic_installation = true,
+          lightbulb = {
+            enable = true,
+            sign = false,
+          },
         },
+        config = function(_, opts)
+          local saga = require("lspsaga")
+          saga.setup(opts)
+        end,
+        dependencies = {
+          "nvim-treesitter/nvim-treesitter", -- optional
+          "nvim-tree/nvim-web-devicons",     -- optional
+        }
       },
     },
     opts = {

@@ -8,15 +8,18 @@ M.on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to Definition" }))
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Go to Declaration" }))
   vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Go to Implementation" }))
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, vim.tbl_extend("force", opts, { desc = "Find References" }))
+  vim.keymap.set('n', 'gr', function() vim.cmd.Lspsaga({ "finder" }) end,
+    vim.tbl_extend("force", opts, { desc = "Find References" }))
   vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition,
     vim.tbl_extend("force", opts, { desc = "Go to Type Definition" }))
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover Documentation" }))
-  vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
-  vim.keymap.set('n', '<leader>lr', vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename Symbol" }))
+  vim.keymap.set('n', 'ga', function() vim.cmd.Lspsaga({ "code_action" }) end,
+    vim.tbl_extend("force", opts, { desc = "Code Action" }))
+  vim.keymap.set('n', 'gn', function() vim.cmd.Lspsaga({ "rename" }) end,
+    vim.tbl_extend("force", opts, { desc = "Rename Symbol" }))
   vim.keymap.set('n', '<leader>ls', vim.lsp.buf.signature_help,
     vim.tbl_extend("force", opts, { desc = "Signature Help" }))
-  vim.keymap.set('n', '<leader>le', vim.diagnostic.open_float,
+  vim.keymap.set('n', 'ge', function() vim.cmd.Lspsaga({ "show_line_diagnostics" }) end,
     vim.tbl_extend("force", opts, { desc = "Show Diagnostics" }))
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, vim.tbl_extend("force", opts, { desc = "Previous Diagnostic" }))
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, vim.tbl_extend("force", opts, { desc = "Next Diagnostic" }))
