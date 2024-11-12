@@ -38,6 +38,9 @@ return {
       end
 
       vim.keymap.set("n", "<leader>du", function() dapui.toggle() end, { desc = "Toggle DAP UI" })
+      vim.keymap.set("n", "<leader>df", function()
+        dapui.float_element(nil, { enter = true, })
+      end, { desc = "Show DAP UI element in Floating Window" })
     end,
   },
 }
