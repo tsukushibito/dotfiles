@@ -24,7 +24,8 @@ return {
       "nvim-neotest/nvim-nio",
     },
     config = function()
-      require("dapui").setup({
+      local dap, dapui = require("dap"), require("dapui")
+      dapui.setup({
         element_mappings = {
           stacks = {
             open = "<CR>",
@@ -32,7 +33,6 @@ return {
           }
         },
       })
-      local dap, dapui = require("dap"), require("dapui")
       dap.listeners.before.attach.dapui_config = function()
         dapui.open()
       end
