@@ -27,7 +27,11 @@ config.color_scheme = 'Vs Code Dark+ (Gogh)'
 config.font = wezterm.font({
   family = "Hack Nerd Font",
 })
-config.font_size = 10.5
+if is_windows then
+  config.font_size = 10.5
+else
+  config.font_size = 12
+end
 
 config.window_background_opacity = 0.97
 wezterm.on("toggle-opacity", function(window, pane)
