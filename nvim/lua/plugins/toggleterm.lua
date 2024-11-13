@@ -11,20 +11,20 @@ return {
     { '<leader>t2', '<cmd>ToggleTerm 2<CR>',                            desc = 'Toggle terminal 2' },
     { '<leader>t3', '<cmd>ToggleTerm 3<CR>',                            desc = 'Toggle terminal 3' },
   },
-  config = function()
-    require('toggleterm').setup {
-      open_mapping = [[<C-\>]],
-      direction = 'float',
-      float_opts = {
-        border = 'curved',
-      },
-    }
-
-    local opts = { noremap = true, silent = true }
-    vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], opts)
-    vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
-    vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
-    vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
-    vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
+  opts = {
+    open_mapping = [[<C-\>]],
+    direction = 'float',
+    float_opts = {
+      border = 'curved',
+    },
+  },
+  config = function(_, opts)
+    require('toggleterm').setup(opts)
+    local key_opts = { noremap = true, silent = true }
+    vim.keymap.set('t', '<leader><Esc>', [[<C-\><C-n>]], key_opts)
+    vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], key_opts)
+    vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], key_opts)
+    vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], key_opts)
+    vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], key_opts)
   end,
 }

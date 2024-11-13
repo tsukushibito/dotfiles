@@ -1,4 +1,4 @@
-local is_windows = wezterm.target_triple:find("windows")
+local is_windows = vim.loop.os_uname().version:match("Windows") ~= nil
 if is_windows then
   -- スクロール速度が遅すぎるので使わない
   return {}
