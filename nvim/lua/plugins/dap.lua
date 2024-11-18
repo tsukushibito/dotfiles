@@ -13,6 +13,7 @@ return {
       vim.keymap.set("n", "<leader>do", function() dap.step_out() end, { desc = "Step Out" })
       vim.keymap.set("n", "<leader>dmu", function() dap.up() end, { desc = "Move up in the stack trace" })
       vim.keymap.set("n", "<leader>dmd", function() dap.down() end, { desc = "Move down in the stack trace" })
+      vim.keymap.set("n", "<leader>dt", function() dap.terminate() end, { desc = "Terminate debug session" })
     end,
   },
   {
@@ -39,12 +40,12 @@ return {
       dap.listeners.before.launch.dapui_config = function()
         dapui.open()
       end
-      dap.listeners.before.event_terminated.dapui_config = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited.dapui_config = function()
-        dapui.close()
-      end
+      -- dap.listeners.before.event_terminated.dapui_config = function()
+      --   dapui.close()
+      -- end
+      -- dap.listeners.before.event_exited.dapui_config = function()
+      --   dapui.close()
+      -- end
 
       vim.keymap.set("n", "<leader>du", function() dapui.toggle() end, { desc = "Toggle DAP UI" })
       local args = { enter = true, }
