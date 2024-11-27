@@ -49,7 +49,7 @@ config.keys = {
   { key = "o", mods = "LEADER", action = wezterm.action.EmitEvent("toggle-opacity"), },
   { key = "t", mods = 'LEADER', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
   { key = "w", mods = 'LEADER', action = wezterm.action.CloseCurrentTab { confirm = true } },
-  { key = "|", mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
+  { key = "s", mods = 'LEADER', action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' } },
   { key = "d", mods = 'LEADER', action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' } },
   { key = "h", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Left' },
   { key = "l", mods = 'LEADER', action = wezterm.action.ActivatePaneDirection 'Right' },
