@@ -20,8 +20,8 @@ return {
       local themes = require("telescope.themes")
       -- local actions = require('telescope.actions')
       telescope.setup {
-        defaults = themes.get_dropdown {
-        },
+        -- defaults = themes.get_dropdown {
+        -- },
         extensions = {
           file_browser = {
             initial_mode = "normal",
