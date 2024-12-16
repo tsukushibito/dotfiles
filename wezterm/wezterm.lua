@@ -28,7 +28,7 @@ config.font = wezterm.font({
   family = "Hack Nerd Font",
 })
 if is_windows then
-  config.font_size = 10.5
+  config.font_size = 10
 else
   config.font_size = 12
 end
