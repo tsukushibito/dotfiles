@@ -15,7 +15,11 @@ end
 local mux = wezterm.mux
 wezterm.on("gui-startup", function(cmd)
   local tab, pane, window = mux.spawn_window(cmd or {})
-  window:gui_window():toggle_fullscreen()
+  if is_windows then
+    window:gui_window():maximize()
+  else
+    window:gui_window():toggle_fullscreen()
+  end
 end)
 
 config.hide_tab_bar_if_only_one_tab = true
