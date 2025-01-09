@@ -10,8 +10,11 @@ return {
       {
         "<leader>,",
         function()
-          local config_path = vim.fn.stdpath("config")
-          vim.cmd("NvimTreeOpen " .. config_path)
+          local api = require("nvim-tree.api")
+          api.tree.toggle({
+            path = vim.fn.stdpath("config"),
+            focus = true,
+          })
         end,
         desc = "Open NvimTree at config directory",
         noremap = true,
@@ -20,8 +23,11 @@ return {
       {
         "<leader>e",
         function()
-          local current_dir = vim.fn.getcwd()
-          vim.cmd("NvimTreeOpen " .. current_dir)
+          local api = require("nvim-tree.api")
+          api.tree.toggle({
+            path = vim.fn.getcwd(),
+            focus = true,
+          })
         end,
         desc = "Open NvimTree at current directory",
         noremap = true,
@@ -33,7 +39,11 @@ return {
           local file_path = vim.api.nvim_buf_get_name(0)
           local dir_path = vim.fn.fnamemodify(file_path, ":h")
           if dir_path and dir_path ~= "" then
-            vim.cmd("NvimTreeOpen " .. dir_path)
+            local api = require("nvim-tree.api")
+            api.tree.toggle({
+              path = dir_path,
+              focus = true,
+            })
           else
             vim.notify("No file associated with the current buffer", vim.log.levels.WARN)
           end
@@ -42,7 +52,6 @@ return {
         noremap = true,
         silent = true,
       },
-      { "<leader>n", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
     },
     config = function()
       require('nvim-tree').setup({
